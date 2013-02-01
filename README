@@ -28,3 +28,8 @@ CREATE TABLE `spots` (
   KEY `freq` (`freq`),
   KEY `band` (`band`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+to run the automation script use a cron.
+
+00 */2 * * * /bin/bash /usr/home/bwirel/public_html/dxcluster/start-spotsucker.sh
+
