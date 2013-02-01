@@ -1,0 +1,30 @@
+Spots SQL Schema
+
+CREATE TABLE `spots` (
+  `nr` bigint(20) NOT NULL AUTO_INCREMENT,
+  `call` varchar(12) NOT NULL DEFAULT '',
+  `freq` float unsigned NOT NULL DEFAULT '0',
+  `dxcall` varchar(12) NOT NULL DEFAULT '',
+  `comment` varchar(30) NOT NULL DEFAULT '',
+  `time` datetime NOT NULL,
+  `band` float NOT NULL DEFAULT '0',
+  `dx_prefix` varchar(10) NOT NULL,
+  `dx_name` varchar(150) NOT NULL,
+  `dx_cqz` float NOT NULL,
+  `dx_ituz` float NOT NULL,
+  `dx_cont` varchar(5) NOT NULL,
+  `dx_long` float NOT NULL,
+  `dx_lat` float NOT NULL,
+  `spotter_prefix` varchar(10) NOT NULL,
+  `spotter_name` varchar(150) NOT NULL,
+  `spotter_cqz` float NOT NULL,
+  `spotter_ituz` float NOT NULL,
+  `spotter_cont` varchar(5) NOT NULL,
+  `spotter_long` float NOT NULL,
+  `spotter_lat` float NOT NULL,
+  PRIMARY KEY (`nr`),
+  KEY `dxcall` (`dxcall`),
+  KEY `time` (`time`,`band`),
+  KEY `freq` (`freq`),
+  KEY `band` (`band`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
